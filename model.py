@@ -17,7 +17,7 @@ for line in lines:
     cnt += 1
     if cnt == 0:
         continue
-    for i in range(3):
+    for i in range(1):
         source_path = line[i]
         filename = source_path.split('/')[-1]
         current_path = 'download/data/IMG/'+filename
@@ -63,3 +63,6 @@ model.fit(X_train, y_train, validation_split=0.2,
 shuffle=True, nb_epoch=5, verbose=1)
 
 model.save('model.h5')
+
+from keras.utils import plot_model
+plot_model(model, to_file='model.png')
