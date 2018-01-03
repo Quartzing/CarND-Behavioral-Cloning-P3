@@ -17,7 +17,7 @@ for line in lines:
     cnt += 1
     if cnt == 0:
         continue
-    for i in range(3):
+    for i in range(1):
         source_path = line[i]
         filename = source_path.split('/')[-1]
         current_path = 'download/data/IMG/'+filename
