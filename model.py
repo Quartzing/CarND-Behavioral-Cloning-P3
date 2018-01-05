@@ -1,6 +1,8 @@
 import csv
 import cv2
 import numpy as np
+from PIL import Image
+
 
 lines = []
 
@@ -21,7 +23,9 @@ for line in lines:
         source_path = line[i]
         filename = source_path.split('/')[-1]
         current_path = 'download/data/IMG/'+filename
-        image = cv2.imread(current_path)
+        # image = cv2.imread(current_path)
+        image = Image.open(current_path)
+        image = np.asarray(image)
         # print(image)
         images.append(image)
         measurement = float(line[3])
